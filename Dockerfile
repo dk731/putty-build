@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     cmake \
     mingw-w64 \
     git \
-    && rm -rf /var/lib/apt/lists/*  
+    && rm -rf /var/lib/apt/lists/*
 
 # Copy build script into the image
 COPY build.sh /usr/local/bin/build-putty.sh
