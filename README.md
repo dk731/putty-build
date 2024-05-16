@@ -1,14 +1,9 @@
-`docker build -t putty-build:latest .` - build
+# Usage
 
-`docker run -d --name putty-build --volume /Users/demid/Desktop/putty-src:/putty-src putty-build:latest` - run
+`docker run -it --rm -v PUTTY_SRC_FULL_PATH:/putty-src putty-build:latest`
 
-`apt install`:
-- `cmake`
-- `mingw-w64`
+Example (windows build):
+`docker run -it --rm -v $(pwd)/../putty-src:/putty-src putty-build:latest`
 
-
-
-# Build windows:
-
-- `cmake -DCMAKE_TOOLCHAIN_FILE=Toolchain-Windows.cmake .`
-- `cmake --build .`
+Example (unix build):
+`docker run -it --rm -v $(pwd)/../putty-src:/putty-src putty-build:latest unix`
